@@ -2,10 +2,30 @@
 //
 
 #include <iostream>
-
+class Solution {
+public:
+	int rangeBitwiseAnd(int m, int n) 
+	{
+		int nCount = 0;
+		int nRet = 0;
+		while (m != n)
+		{
+			m=m >> 1;
+			n=n >> 1;
+			nCount++;
+		}
+		while (nCount != 0)
+		{
+			m = m << 1;
+			nCount--;
+		}
+		return m;
+	}
+};
 int main()
 {
-    std::cout << "Hello World!\n";
+	Solution slnObj;
+    std::cout << slnObj.rangeBitwiseAnd(5,7);
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
